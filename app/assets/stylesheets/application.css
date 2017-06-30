@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+table {
+    border-collapse: collapse;
+}
+
+table tr td {
+    padding: 10px;
+}
+
+thead {
+    text-align: left;
+    background: #00308F;
+    color: #FFF;
+}
+
+thead th {
+    padding: 10px;
+}
+
+.list_line_even {
+    background: #FAEBD7;
+}
+
+.list_line_odd {
+    background: #FEFEFA;
+}

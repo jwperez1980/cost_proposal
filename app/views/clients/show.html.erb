@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Account number:</strong>
+  <%= @client.account_number %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @client.site %>
+</p>
+
+<p>
+  <strong>Institution:</strong>
+  <%= @client.institution %>
+</p>
+
+<p>
+  <strong>Post office box:</strong>
+  <%= @client.post_office_box %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @client.street_address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @client.city %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @client.zip %>
+</p>
+
+<p>
+  <strong>Zip four:</strong>
+  <%= @client.zip_four %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @client.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @client.email %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @client.state %>
+</p>
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>

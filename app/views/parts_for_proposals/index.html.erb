@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Parts For Proposals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Part number</th>
+      <th>Descripton</th>
+      <th>Cost</th>
+      <th>Proposal</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parts_for_proposals.each do |parts_for_proposal| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= parts_for_proposal.part_number %></td>
+        <td><%= parts_for_proposal.descripton %></td>
+        <td><%= parts_for_proposal.cost %></td>
+        <td><%= parts_for_proposal.proposal %></td>
+        <td><%= link_to 'Show', parts_for_proposal %></td>
+        <td><%= link_to 'Edit', edit_parts_for_proposal_path(parts_for_proposal) %></td>
+        <td><%= link_to 'Destroy', parts_for_proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Parts For Proposal', new_parts_for_proposal_path %>

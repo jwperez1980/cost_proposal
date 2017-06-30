@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  po_number: MyString
+  quote_number: 1
+  date_quoted: 2017-06-29
+  date_needed: 2017-06-29
+  ship_via: MyString
+  project: one
+
+two:
+  po_number: MyString
+  quote_number: 1
+  date_quoted: 2017-06-29
+  date_needed: 2017-06-29
+  ship_via: MyString
+  project: two

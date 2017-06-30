@@ -1,0 +1,37 @@
+<%= form_for(parts_for_proposal) do |f| %>
+  <% if parts_for_proposal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parts_for_proposal.errors.count, "error") %> prohibited this parts_for_proposal from being saved:</h2>
+
+      <ul>
+      <% parts_for_proposal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :part_number %>
+    <%= f.number_field :part_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descripton %>
+    <%= f.text_field :descripton %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+  </div>
+
+  <div class="field">
+    <%= f.label :proposal_id %>
+    <%= f.text_field :proposal_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
