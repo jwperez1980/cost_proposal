@@ -12,23 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :part_number %>
-    <%= f.number_field :part_number %>
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %>
   </div>
 
   <div class="field">
-    <%= f.label :descripton %>
-    <%= f.text_field :descripton %>
+    <%= f.label :frequency %>
+    <%= f.number_field :frequency %>
   </div>
 
   <div class="field">
-    <%= f.label :cost %>
-    <%= f.text_field :cost %>
+    <%= f.label :quantity_per_visit %>
+    <%= f.number_field :quantity_per_visit %>
   </div>
 
   <div class="field">
     <%= f.label :proposal_id %>
     <%= f.text_field :proposal_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :part_id %>
+    <%= f.text_field :part_id %>
   </div>
 
   <div class="actions">

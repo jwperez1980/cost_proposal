@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  part_number: 1
-  descripton: MyString
-  cost: 
+  quantity: 1
+  frequency: 1
+  quantity_per_visit: 1
   proposal: one
+  part: one
 
 two:
-  part_number: 1
-  descripton: MyString
-  cost: 
+  quantity: 1
+  frequency: 1
+  quantity_per_visit: 1
   proposal: two
+  part: two

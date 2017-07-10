@@ -69,6 +69,6 @@ class PartsForProposalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def parts_for_proposal_params
-      params.require(:parts_for_proposal).permit(:part_number, :descripton, :cost, :proposal_id)
+      params.require(:parts_for_proposal).permit(:quantity, :frequency, :quantity_per_visit, :proposal_id, :part_id)
     end
 end

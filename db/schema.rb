@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629232848) do
+ActiveRecord::Schema.define(version: 20170710183227) do
 
   create_table "client_contacts", force: :cascade do |t|
     t.string   "last_name"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20170629232848) do
   end
 
   create_table "parts", force: :cascade do |t|
-    t.integer  "part_number"
+    t.string   "part_number"
     t.string   "description"
     t.decimal  "cost"
     t.datetime "created_at",  null: false
@@ -56,12 +56,14 @@ ActiveRecord::Schema.define(version: 20170629232848) do
   end
 
   create_table "parts_for_proposals", force: :cascade do |t|
-    t.integer  "part_number"
-    t.string   "descripton"
-    t.decimal  "cost"
+    t.integer  "quantity"
+    t.integer  "frequency"
+    t.integer  "quantity_per_visit"
     t.integer  "proposal_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "part_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["part_id"], name: "index_parts_for_proposals_on_part_id"
     t.index ["proposal_id"], name: "index_parts_for_proposals_on_proposal_id"
   end
 

@@ -1,23 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Part number:</strong>
-  <%= @parts_for_proposal.part_number %>
+  <strong>Quantity:</strong>
+  <%= @parts_for_proposal.quantity %>
 </p>
 
 <p>
-  <strong>Descripton:</strong>
-  <%= @parts_for_proposal.descripton %>
+  <strong>Frequency:</strong>
+  <%= @parts_for_proposal.frequency %>
 </p>
 
 <p>
-  <strong>Cost:</strong>
-  <%= @parts_for_proposal.cost %>
+  <strong>Quantity per visit:</strong>
+  <%= @parts_for_proposal.quantity_per_visit %>
 </p>
 
 <p>
   <strong>Proposal:</strong>
   <%= @parts_for_proposal.proposal %>
+</p>
+
+<p>
+  <strong>Part:</strong>
+  <%= @parts_for_proposal.part %>
 </p>
 
 <%= link_to 'Edit', edit_parts_for_proposal_path(@parts_for_proposal) %> |
