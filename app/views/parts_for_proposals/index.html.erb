@@ -20,8 +20,8 @@
         <td><%= parts_for_proposal.quantity %></td>
         <td><%= parts_for_proposal.frequency %></td>
         <td><%= parts_for_proposal.quantity_per_visit %></td>
-        <td><%= parts_for_proposal.proposal %></td>
-        <td><%= parts_for_proposal.part %></td>
+        <td><%= parts_for_proposal.proposal.project.project_name %></td>
+        <td><%= parts_for_proposal.part.part_number %></td>
         <td><%= link_to 'Show', parts_for_proposal %></td>
         <td><%= link_to 'Edit', edit_parts_for_proposal_path(parts_for_proposal) %></td>
         <td><%= link_to 'Destroy', parts_for_proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>

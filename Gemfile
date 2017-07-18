@@ -10,6 +10,7 @@ end
 gem 'rails', '5.0.1'
 # Bootstrap
 gem 'bootstrap-sass', '3.3.7'
+gem 'autoprefixer-rails'
 # Use Puma as the app server
 gem 'puma', '3.4.0'
 # Use SCSS for stylesheets

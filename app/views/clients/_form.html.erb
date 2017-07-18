@@ -63,7 +63,7 @@
 
   <div class="field">
     <%= f.label :state_id %>
-    <%= f.text_field :state_id %>
+    <%= f.collection_select(:state_id, State.all, :id, :short, prompt: true) %>
   </div>
 
   <div class="actions">

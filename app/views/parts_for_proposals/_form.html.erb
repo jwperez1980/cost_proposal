@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= f.label :part_id %>
-    <%= f.text_field :part_id %>
+    <%= f.collection_select(:part_id, Part.all, :id, :part_number, prompt: true) %>
   </div>
 
   <div class="actions">

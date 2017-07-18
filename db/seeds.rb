@@ -7,12 +7,20 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+Employee.delete_all
 Project.delete_all
 Client.delete_all
 State.delete_all
 Part.delete_all
 PartsForProposal.delete_all
+Proposal.delete_all
 
+Employee.create!(
+	last_name: "Limmer",
+	first_name: "Edward", 
+	nickname: "Ted",
+	email: "ted@thewaterguys.com"
+)
 
 State.create!(name: "Arkansas", short: 'AR')
 State.create!(name: "Tennesee", short: "TN")
@@ -31,16 +39,27 @@ Client.create!(
     state_id: 1)
     
 Project.create!(project_name: "Build new system for St Vincent", client_id: 1)
+
+Proposal.create!(
+	po_number: "43546", 
+	quote_number: 9999, 
+	date_quoted: "July 7, 2017", 
+	date_needed: "August 31, 2017", 
+	ship_via: "X", 
+	project_id: 1
+)
     
-Part.create!(part_number: "HSDICARB1.2", description: "SDI exchange carbon 1.2 ft3")		
-Part.create!(part_number: "SDIMIXBED1.2", description: "SDI exchange mixbed 1.2 ft3")		
-Part.create!(part_number: "T182120", description: "Minncare Quart")		
-Part.create!(part_number: "T177036", description: ".2 Micron filter")		
-Part.create!(part_number: "T170260", description: "10 inch 1UM Pretreatment filter")		
-Part.create!(part_number: "LoopSani07", description: "Loop sanitization")		
+Part.create!(part_number: "HSDICARB1.2", description: "SDI exchange carbon 1.2 ft3", cost: 220.00)		
+Part.create!(part_number: "SDIMIXBED1.2", description: "SDI exchange mixbed 1.2 ft3", cost: 220.00)		
+Part.create!(part_number: "T182120", description: "Minncare Quart", cost: 55.00)		
+Part.create!(part_number: "T177036", description: ".2 Micron filter", cost: 64.00)		
+Part.create!(part_number: "T170260", description: "10 inch 1UM Pretreatment filter", cost: 8.00)		
+Part.create!(part_number: "LoopSani07", description: "Loop sanitization", cost: 700.00)		
 Part.create!(part_number: "RecData01", description: "Record data - Water quality")		
-Part.create!(part_number: "T131644", description: "Minncare Residual Test Strips")		
-Part.create!(part_number: "T148387", description: ".2 Micron POU Filter (located at faucet)")
+Part.create!(part_number: "T131644", description: "Minncare Residual Test Strips", cost: 48.00)		
+Part.create!(part_number: "T148387", description: ".2 Micron POU Filter (located at faucet)", cost: 80.00)
+
+
 
 PartsForProposal.create!(
 	quantity: 1, 
