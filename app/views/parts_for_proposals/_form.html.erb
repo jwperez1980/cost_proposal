@@ -36,7 +36,7 @@
     <%= f.collection_select(:part_id, Part.all, :id, :part_number, prompt: true) %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+    Create
+  <% end %>
 <% end %>
