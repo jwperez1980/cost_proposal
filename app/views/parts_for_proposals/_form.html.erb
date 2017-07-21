@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :quantity %>
-    <%= f.number_field :quantity %>
+    <%= f.label :part_id %>
+    <%= f.collection_select(:part_id, Part.all, :id, :part_number, prompt: true) %>
   </div>
 
   <div class="field">
     <%= f.label :frequency %>
     <%= f.number_field :frequency %>
+  </div>
+
+  <div class="field">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %>
   </div>
 
   <div class="field">
@@ -31,12 +36,12 @@
     <%= f.text_field :proposal_id %>
   </div>
 
-  <div class="field">
-    <%= f.label :part_id %>
-    <%= f.collection_select(:part_id, Part.all, :id, :part_number, prompt: true) %>
-  </div>
 
-  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-    Create
+  
+  <% if @parts_for_proposal.persisted? %>
+    <%= render "shared/submit_button", button_text: "Update" %>
+  <% else %>
+     <%= render "shared/submit_button", button_text: "Create"  %>
   <% end %>
+  
 <% end %>

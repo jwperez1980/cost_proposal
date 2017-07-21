@@ -41,7 +41,9 @@
     <%= f.text_field :project_id %>
   </div>
 
-  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-    Create
+  <% if @proposal.persisted? %>
+    <%= render "shared/submit_button", button_text: "Update" %>
+  <% else %>
+     <%= render "shared/submit_button", button_text: "Create"  %>
   <% end %>
 <% end %>

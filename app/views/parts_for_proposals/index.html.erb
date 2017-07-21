@@ -3,31 +3,9 @@
 <h1>Parts For Proposals</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Quantity</th>
-      <th>Frequency</th>
-      <th>Quantity per visit</th>
-      <th>Proposal</th>
-      <th>Part</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  
+  <%= render "shared/parts_for_proposals_details", p_for_f_object: @parts_for_proposals %>
 
-  <tbody>
-    <% @parts_for_proposals.each do |parts_for_proposal| %>
-      <tr>
-        <td><%= parts_for_proposal.quantity %></td>
-        <td><%= parts_for_proposal.frequency %></td>
-        <td><%= parts_for_proposal.quantity_per_visit %></td>
-        <td><%= parts_for_proposal.proposal.project.project_name %></td>
-        <td><%= parts_for_proposal.part.part_number %></td>
-        <td><%= link_to 'Show', parts_for_proposal %></td>
-        <td><%= link_to 'Edit', edit_parts_for_proposal_path(parts_for_proposal) %></td>
-        <td><%= link_to 'Destroy', parts_for_proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
 </table>
 
 <br>

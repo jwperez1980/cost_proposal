@@ -30,5 +30,12 @@
   <%= @proposal.project %>
 </p>
 
+<table>
+  
+  <%= render "shared/parts_for_proposals_details", 
+    p_for_f_object: PartsForProposal.find(@proposal.project_id) %>
+
+</table>
+
 <%= link_to 'Edit', edit_proposal_path(@proposal) %> |
 <%= link_to 'Back', proposals_path %>
