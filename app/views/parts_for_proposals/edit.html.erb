@@ -1,6 +1,5 @@
-<h1>Editing Parts For Proposal</h1>
+<h1>Editing Part For Project: <%= @parts_for_proposal.proposal.project.project_name %></h1>
 
 <%= render 'form', parts_for_proposal: @parts_for_proposal %>
 
-<%= link_to 'Show', @parts_for_proposal %> |
-<%= link_to 'Back', parts_for_proposals_path %>
+<%= link_to 'Back', request.referrer %>

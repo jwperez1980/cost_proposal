@@ -1,6 +1,5 @@
   <thead>
     <tr>
-      <th>Project Name</th>
       <th>Part Number</th>
       <th>Description</th>
       <th>Frequency</th>
@@ -11,17 +10,18 @@
   </thead>
 
   <tbody>
-    <% local_assigns[:p_for_f_object]all.each do |parts_for_proposal| %>
+    <%
+      @results = PartsForProposal.where("proposal_id = ?", @proposal.id)
+      
+      @results.each do |part| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-        <td><%= parts_for_proposal.proposal.project.project_name %></td>
-        <td><%= parts_for_proposal.part.part_number %></td>
-        <td><%= parts_for_proposal.part.description %></td>
-        <td><%= parts_for_proposal.frequency %></td>
-        <td><%= parts_for_proposal.quantity %></td>
-        <td><%= parts_for_proposal.quantity_per_visit %></td>
-        <td><%= link_to 'Show', parts_for_proposal %></td>
-        <td><%= link_to 'Edit', edit_parts_for_proposal_path(parts_for_proposal) %></td>
-        <td><%= link_to 'Destroy', parts_for_proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= part.part.part_number %></td>
+        <td><%= part.part.description %></td>
+        <td><%= part.frequency %></td>
+        <td><%= part.quantity %></td>
+        <td><%= part.quantity_per_visit %></td>
+        <td><%= link_to 'Edit', edit_parts_for_proposal_path(part) %></td>
+
       </tr>
     <% end %>
   </tbody>

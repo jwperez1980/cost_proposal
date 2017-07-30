@@ -39,6 +39,7 @@ Client.create!(
     state_id: 1)
     
 Project.create!(project_name: "Build new system for St Vincent", client_id: 1)
+Project.create!(project_name: "Build new system for St Vincent Cardiology", client_id: 1)
 
 Proposal.create!(
 	po_number: "43546", 
@@ -47,6 +48,15 @@ Proposal.create!(
 	date_needed: "August 31, 2017", 
 	ship_via: "X", 
 	project_id: 1
+)
+ 
+Proposal.create!(
+	po_number: "453111", 
+	quote_number: 8888, 
+	date_quoted: "July 27, 2017", 
+	date_needed: "September 30, 2017", 
+	ship_via: "X", 
+	project_id: 2
 )
     
 Part.create!(part_number: "HSDICARB1.2", description: "SDI exchange carbon 1.2 ft3", cost: 220.00)		
@@ -58,8 +68,10 @@ Part.create!(part_number: "LoopSani07", description: "Loop sanitization", cost: 
 Part.create!(part_number: "RecData01", description: "Record data - Water quality")		
 Part.create!(part_number: "T131644", description: "Minncare Residual Test Strips", cost: 48.00)		
 Part.create!(part_number: "T148387", description: ".2 Micron POU Filter (located at faucet)", cost: 80.00)
-
-
+Part.create!(part_number: "ABC111", description: "Demo part ABC", cost: 20.00)		
+Part.create!(part_number: "DEF123", description: "Demo part DEF", cost: 120.00)		
+Part.create!(part_number: "GHI123", description: "Demo part GHI", cost: 220.00)		
+Part.create!(part_number: "JKL123", description: "Demo part JKL", cost: 320.00)		
 
 PartsForProposal.create!(
 	quantity: 1, 
@@ -131,4 +143,37 @@ PartsForProposal.create!(
 	quantity_per_visit: 8, 
 	proposal_id: 1, 
 	part_id: 9
+)
+
+
+PartsForProposal.create!(
+	quantity: 1, 
+	frequency: 180, 
+	quantity_per_visit: 1, 
+	proposal_id: 2, 
+	part_id: 10
+)
+
+PartsForProposal.create!(
+	quantity: 4, 
+	frequency: 180, 
+	quantity_per_visit: 2, 
+	proposal_id: 2, 
+	part_id: 11
+)
+
+PartsForProposal.create!(
+	quantity: 1, 
+	frequency: 360, 
+	quantity_per_visit: 1, 
+	proposal_id: 2, 
+	part_id: 12
+)
+
+PartsForProposal.create!(
+	quantity: 2, 
+	frequency: 180, 
+	quantity_per_visit: 1, 
+	proposal_id: 2, 
+	part_id: 13
 )
