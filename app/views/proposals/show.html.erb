@@ -36,5 +36,5 @@
 
 </table>
 
-<%= link_to 'Add', new_part_path %> |
+<%= link_to 'Add', {controller: "parts_for_proposals", action: "new", id: @proposal.id} %> |
 <%= link_to 'Back', proposals_path %>

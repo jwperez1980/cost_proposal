@@ -4,7 +4,7 @@ class PartsForProposalsController < ApplicationController
   # GET /parts_for_proposals
   # GET /parts_for_proposals.json
   def index
-    @parts_for_proposals = PartsForProposal.all
+    @parts_for_proposal = PartsForProposal.all
   end
 
   # GET /parts_for_proposals/1
@@ -14,7 +14,9 @@ class PartsForProposalsController < ApplicationController
 
   # GET /parts_for_proposals/new
   def new
+    @proposal = Proposal.find(params[:id])
     @parts_for_proposal = PartsForProposal.new
+    @parts_for_proposal.proposal_id = params[:id]
   end
 
   # GET /parts_for_proposals/1/edit

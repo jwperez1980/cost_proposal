@@ -11,11 +11,15 @@
     </div>
   <% end %>
 
+  <% if @parts_for_proposal.persisted? %>
   <div class-"field">
     <%= f.label :description %>:
     <%= parts_for_proposal.part["description"] %>
   </div>
+  <% else %>
 
+  <% end %>
+  
   <div class="field">
     <%= f.label :part_id %>
     <%= f.collection_select(:part_id, Part.all, :id, :part_number, prompt: true) %>
@@ -34,11 +38,6 @@
   <div class="field">
     <%= f.label :quantity_per_visit %>
     <%= f.number_field :quantity_per_visit %>
-  </div>
-
-  <div class="field">
-    <%= f.label :proposal_id %>
-    <%= f.text_field :proposal_id %>
   </div>
 
 
