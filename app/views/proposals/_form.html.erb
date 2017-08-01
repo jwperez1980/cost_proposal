@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+
+
+  <div class="field">
+    <%= f.label "Client: Project Name" %>
+    <%= f.collection_select(:project_id, Project.all, :id, :name_with_instituion, prompt: true) %>
+  </div>
+
   <div class="field">
     <%= f.label :po_number %>
     <%= f.text_field :po_number %>
@@ -36,14 +43,9 @@
     <%= f.text_field :ship_via %>
   </div>
 
-  <div class="field">
-    <%= f.label :project_id %>
-    <%= f.collection_select(:project_id, Project.all, :id, :project_name, prompt: true) %>
-  </div>
-
   <% if @proposal.persisted? %>
-    <%= render "shared/submit_button", button_text: "Update" %>
+    <%= f.submit "Update" %>
   <% else %>
-     <%= render "shared/submit_button", button_text: "Create"  %>
+     <%= f.submit "Create" %>
   <% end %>
 <% end %>

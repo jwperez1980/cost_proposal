@@ -30,7 +30,8 @@ class PartsForProposalsController < ApplicationController
 
     respond_to do |format|
       if @parts_for_proposal.save
-        format.html { redirect_to @parts_for_proposal, notice: 'Parts for proposal was successfully created.' }
+        curr_id = @parts_for_proposal.proposal_id
+        format.html { redirect_to proposal_url(:id => curr_id), notice: 'Part added to this proposal successfully.' }
         format.json { render :show, status: :created, location: @parts_for_proposal }
       else
         format.html { render :new }
@@ -44,7 +45,8 @@ class PartsForProposalsController < ApplicationController
   def update
     respond_to do |format|
       if @parts_for_proposal.update(parts_for_proposal_params)
-        format.html { redirect_to @parts_for_proposal, notice: 'Parts for proposal was successfully updated.' }
+        curr_id = @parts_for_proposal.proposal_id
+        format.html { redirect_to proposal_url(:id => curr_id), notice: 'Part configuration update was successfull.' }
         format.json { render :show, status: :ok, location: @parts_for_proposal }
       else
         format.html { render :edit }
@@ -56,9 +58,10 @@ class PartsForProposalsController < ApplicationController
   # DELETE /parts_for_proposals/1
   # DELETE /parts_for_proposals/1.json
   def destroy
+    curr_id = @parts_for_proposal.proposal_id
     @parts_for_proposal.destroy
     respond_to do |format|
-      format.html { redirect_to parts_for_proposals_url, notice: 'Parts for proposal was successfully destroyed.' }
+      format.html { redirect_to proposal_url(:id => curr_id), notice: 'Part configuration was successfully removed.' }
       format.json { head :no_content }
     end
   end
@@ -66,11 +69,15 @@ class PartsForProposalsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_parts_for_proposal
-      @parts_for_proposal = PartsForProposal.find(params[:id])
+#      if @curr_id 
+#        @parts_for_proposal = PartsForProposal.find(@curr_id)
+#      else
+        @parts_for_proposal = PartsForProposal.find(params[:id])
+#      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def parts_for_proposal_params
-      params.require(:parts_for_proposal).permit(:frequency, :quantity_per_visit, :proposal_id, :part_id)
+      params.require(:parts_for_proposal).permit(:frequency, :quantity, :quantity_per_visit, :proposal_id, :part_id)
     end
 end

@@ -14,16 +14,18 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><%= link_to "Propsals", proposals_path %></li>
-      <li><%= link_to "client_contacts", client_contacts_path %></li>
-      <li><%= link_to "employees", employees_path %></li>
-      <li><%= link_to "parts", parts_path %></li>
-      <li><%= link_to "parts_for_proposals", parts_for_proposals_path %></li>
-      <li><%= link_to "projects", projects_path %></li>
-      <li><%= link_to "states_contacts", states_path %></li>
+      <li><%= link_to "Contacts", client_contacts_path %></li>
+      <li><%= link_to "Employees", employees_path %></li>
+      <li><%= link_to "Parts", parts_path %></li>
+      <li><%= link_to "Projects", projects_path %></li>
+      <li><%= link_to "States", states_path %></li>
     </ul>
   </div>
 </nav>
+
+<div class="container">
 <%= yield %>
+</div>
 
 </body>
 </html>

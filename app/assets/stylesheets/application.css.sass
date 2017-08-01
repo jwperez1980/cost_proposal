@@ -17,7 +17,31 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 
+div.container form input[type="submit"]
+    overflow: visible // Shrinkwrap the text in IE7-
+    margin: 0
+    padding: 0
+    border: 0
+    //color: blue // Match your link colour
+    background: transparent
+    font: inherit // Inherit font settings (doesn’t work in IE7-)
+    line-height: normal // Override line-height to avoid spacing issues
+    //text-decoration: underline // Make it look linky
+    cursor: pointer // Buttons don’t make the cursor change in all browsers
+    -moz-user-select: text // Make button text selectable in Gecko
+    
+    /* Remove mystery padding in Gecko browsers.
+     * See https://bugzilla.mozilla.org/show_bug.cgi?id=140562
+     */
+    &::-moz-focus-inner 
+        padding: 0
+        border: 0
+
+div.container form input[type="submit"]:hover
+    background-color: black
+
 // This CSS is used to style the table on index page and create alternating colored rows
+
 
 table
     border-collapse: collapse

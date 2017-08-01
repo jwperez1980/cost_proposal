@@ -32,8 +32,9 @@
   </div>
 
   <% if @client_contact.persisted? %>
-    <%= render "shared/submit_button", button_text: "Update" %>
+    <%= f.submit "Update" %>
   <% else %>
-     <%= render "shared/submit_button", button_text: "Create"  %>
+     <%= f.submit "Create" %>
   <% end %>
+
 <% end %>

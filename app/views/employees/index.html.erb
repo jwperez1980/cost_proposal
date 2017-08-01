@@ -20,7 +20,6 @@
         <td><%= employee.first_name %></td>
         <td><%= employee.nickname %></td>
         <td><%= employee.email %></td>
-        <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

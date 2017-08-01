@@ -28,7 +28,7 @@ class ProposalsController < ApplicationController
 
     respond_to do |format|
       if @proposal.save
-        format.html { redirect_to @proposal, notice: 'Proposal was successfully created.' }
+        format.html { redirect_to proposal_url(:id => @proposal.id), notice: 'Part added to this proposal successfully.' }
         format.json { render :show, status: :created, location: @proposal }
       else
         format.html { render :new }

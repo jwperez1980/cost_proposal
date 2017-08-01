@@ -40,12 +40,12 @@
     <%= f.number_field :quantity_per_visit %>
   </div>
 
-
+  <%= f.hidden_field :proposal_id, :value => @parts_for_proposal.proposal_id %>
   
   <% if @parts_for_proposal.persisted? %>
-    <%= render "shared/submit_button", button_text: "Update" %>
+    <%= f.submit "Update" %>
   <% else %>
-     <%= render "shared/submit_button", button_text: "Create"  %>
+     <%= f.submit "Create" %>
   <% end %>
   
 <% end %>

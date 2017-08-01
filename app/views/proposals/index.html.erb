@@ -5,12 +5,13 @@
 <table>
   <thead>
     <tr>
+      <th>Client</th>
+      <th>Project</th>
       <th>Po number</th>
       <th>Quote number</th>
       <th>Date quoted</th>
       <th>Date needed</th>
       <th>Ship via</th>
-      <th>Project</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,12 +19,13 @@
   <tbody>
     <% @proposals.each do |proposal| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= proposal.project.client.institution %></td>
+        <td><%= proposal.project.project_name %></td>
         <td><%= proposal.po_number %></td>
         <td><%= proposal.quote_number %></td>
         <td><%= proposal.date_quoted %></td>
         <td><%= proposal.date_needed %></td>
         <td><%= proposal.ship_via %></td>
-        <td><%= proposal.project.project_name %></td>
         <td><%= link_to 'Show', proposal %></td>
         <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
         <td><%= link_to 'Destroy', proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -21,7 +21,7 @@
         <td><%= part.quantity %></td>
         <td><%= part.quantity_per_visit %></td>
         <td><%= link_to 'Edit', edit_parts_for_proposal_path(part) %></td>
-
+        <td><%= link_to 'Remove', part, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

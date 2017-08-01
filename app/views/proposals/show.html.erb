@@ -1,40 +1,48 @@
+
+<h1>Prosposal for <%= @proposal.project.client.institution %></h1>
+<h2>
+  <%= @proposal.project.project_name %><br />
+</h2>
+
+
 <p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-6">
+          <strong>Po number:</strong> <%= @proposal.po_number %>
+        </div>
+        <div class="col-sm-6">
+          <strong>Quote number:</strong><%= @proposal.quote_number %></td>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <strong>Ship via:</strong> <%= @proposal.ship_via %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <strong>Date quoted:</strong> <%= @proposal.date_quoted %>
+        </div>
+        <div class="col-sm-6">
+          <strong>Date needed:</strong> <%= @proposal.date_needed %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p></p>
+  <div class="row">
+    <div class="col-sm-12">
+      <table>
+        
+        <%= render "shared/parts_for_proposals_details" %>
+      
+      </table>
+    </div>
+  </div>
+  <p></p>
+  <%= link_to 'Add Part', {controller: "parts_for_proposals", action: "new", id: @proposal.id} %> |
+  <%= link_to 'Back', proposals_path %>
 
-<p>
-  <strong>Po number:</strong>
-  <%= @proposal.po_number %>
-</p>
 
-<p>
-  <strong>Quote number:</strong>
-  <%= @proposal.quote_number %>
-</p>
-
-<p>
-  <strong>Date quoted:</strong>
-  <%= @proposal.date_quoted %>
-</p>
-
-<p>
-  <strong>Date needed:</strong>
-  <%= @proposal.date_needed %>
-</p>
-
-<p>
-  <strong>Ship via:</strong>
-  <%= @proposal.ship_via %>
-</p>
-
-<p>
-  <strong>Project:</strong>
-  <%= @proposal.project.project_name %>
-</p>
-
-<table>
-  
-  <%= render "shared/parts_for_proposals_details" %>
-
-</table>
-
-<%= link_to 'Add', {controller: "parts_for_proposals", action: "new", id: @proposal.id} %> |
-<%= link_to 'Back', proposals_path %>
