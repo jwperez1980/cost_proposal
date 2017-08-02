@@ -23,6 +23,9 @@
   <div class="field">
     <%= f.label :part_id %>
     <%= f.collection_select(:part_id, Part.all, :id, :part_number, prompt: true) %>
+    <% if !@parts_for_proposal.persisted? %>
+      <br>(Part not in list?  <label><%= link_to 'Click here to create it.', new_part_path %>)</label>
+    <% end %>
   </div>
 
   <div class="field">
