@@ -12,7 +12,7 @@
 
 <p>
   <strong>Cost:</strong>
-  <%= @part.cost %>
+  <%= number_to_currency(@part.cost) %>
 </p>
 
 <%= link_to 'Edit', edit_part_path(@part) %> |

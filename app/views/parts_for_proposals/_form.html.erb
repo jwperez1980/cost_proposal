@@ -30,17 +30,17 @@
 
   <div class="field">
     <%= f.label :frequency %>
-    <%= f.number_field :frequency %>
-  </div>
-
-  <div class="field">
-    <%= f.label :quantity %>
-    <%= f.number_field :quantity %>
+    <%= f.number_field :frequency %> <label>(Number of days between visits)</label>
   </div>
 
   <div class="field">
     <%= f.label :quantity_per_visit %>
     <%= f.number_field :quantity_per_visit %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %> <label>(Per year)</label>
   </div>
 
   <%= f.hidden_field :proposal_id, :value => @parts_for_proposal.proposal_id %>
