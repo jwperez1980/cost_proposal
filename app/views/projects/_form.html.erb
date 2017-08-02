@@ -19,9 +19,7 @@
   <div class="field">
     <%= f.label :client_id %>
     <%= f.collection_select(:client_id, Client.all, :id, :institution, prompt: true) %>
-    <% if !@project.persisted? %>
-      <br>(Client not in list?  <label><%= link_to 'Click here to create it.', new_client_path %>)</label>
-    <% end %>
+    <br>(Client not in list?  <label><%= link_to 'Click here to create it.', new_client_path %>)</label>
   </div>
 
   <% if @project.persisted? %>

@@ -14,6 +14,9 @@
   <div class="field">
     <%= f.label :part_number %>
     <%= f.text_field :part_number %>
+    <% if !@part.persisted? %>
+      <br>(Part not in list?  <label><%= link_to 'Click here to create it.', new_part_path %>)</label>
+    <% end %>
   </div>
 
   <div class="field">
