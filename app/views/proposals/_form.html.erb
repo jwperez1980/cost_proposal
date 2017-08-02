@@ -16,6 +16,9 @@
   <div class="field">
     <%= f.label "Client: Project Name" %>
     <%= f.collection_select(:project_id, Project.all, :id, :name_with_instituion, prompt: true) %>
+    <% if !@proposal.persisted? %>
+      <br>(Project not in list?  <label><%= link_to 'Click here to create it.', new_project_path %>)</label>
+    <% end %>
   </div>
 
   <div class="field">

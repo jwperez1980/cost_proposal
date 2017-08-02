@@ -10,16 +10,17 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Cost Propsals App</a>
+      <a class="navbar-brand" href="#">Cost Proposals App</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><%= link_to "Propsals", proposals_path %></li>
-      <li><%= link_to "Contacts", client_contacts_path %></li>
-      <li><%= link_to "Employees", employees_path %></li>
-      <li><%= link_to "Parts", parts_path %></li>
-      <li><%= link_to "Projects", projects_path %></li>
-      <li><%= link_to "States", states_path %></li>
-    </ul>
+
+    <%= nav_bar do %>
+      <%= nav_link "Propsals", proposals_path %>
+      <%= nav_link "Projects", projects_path %>
+      <%= nav_link "Clients", clients_path %>
+      <%= nav_link "Employees", employees_path %>
+      <%= nav_link "States", states_path %>
+    <% end %>
+
   </div>
 </nav>
 
