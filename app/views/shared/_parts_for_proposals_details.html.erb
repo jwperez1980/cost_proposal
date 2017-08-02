@@ -21,11 +21,11 @@
         <td><%= part.frequency %></td>
         <td><%= part.quantity %></td>
         <td><%= part.quantity_per_visit %></td>
-        <td><%= number_to_currency(part.part.cost) %></td>
+        <td><%= number_to_currency(part.part.cost.to_i * part.quantity.to_i) %></td>
         <td><%= link_to 'Edit', edit_parts_for_proposal_path(part) %></td>
         <td><%= link_to 'Remove', part, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-      <% totalCost = totalCost.to_i + part.part.cost.to_i %>
+      <% totalCost = totalCost.to_i + (part.part.cost.to_i * part.quantity.to_i) %>
     <% end %>
     <tr><td colspan=4><td>Total:</td><td><%= number_to_currency(totalCost) %></td><td colspan=4></td></tr>
   </tbody>
